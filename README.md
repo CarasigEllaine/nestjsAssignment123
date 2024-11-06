@@ -1,1 +1,0 @@
-# NestJS Assignment Repository.
