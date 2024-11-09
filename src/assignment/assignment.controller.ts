@@ -10,4 +10,15 @@ export class AssignmentController {
     }
     return { sequence: fibonacci.slice(0, n) };
   }
+
+  @Get('prime/:number')
+  isPrime(@Param('number') number: string): { isPrime: boolean } {
+    const num = parseInt(number, 10);
+    if (num <= 1) return { isPrime: false };
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return { isPrime: false };
+    }
+    return { isPrime: true };
+}
+
 }
