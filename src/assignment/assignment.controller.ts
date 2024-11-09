@@ -21,4 +21,15 @@ export class AssignmentController {
     return { isPrime: true };
 }
 
+@Get('factorial/:number')
+getFactorial(@Param('number') number: string): { factorial: number } {
+    const num = parseInt(number, 10);
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
+    }
+    return { factorial: result };
+}
+
+
 }
